@@ -1,0 +1,41 @@
+<head>
+    <style>
+        .sidebar{
+            position: fixed;
+            top:0;
+            left:0;
+            height:100vh;
+            width: 300px;
+            background-color: lightblue;
+            z-index: 0;
+        }
+        .model{
+            height:100%;
+            width:100%;
+            position: fixed;
+            background-color: rgba(128, 128, 128, 0.192);
+            left:0;
+            top:0;
+            z-index: 1;
+        }
+        .model-body{
+            background-color: white;
+            margin:auto;
+            height: 30%;
+            width:30%;
+            z-index: 10;
+        }
+        .content{
+            margin-left:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="model">
+        <div class="model-body">
+            <h1>I'm model </h1>
+        </div>
+    </div>
+    <div class="sidebar">Side bar</div>
+    <div class="content">Content</div>
+</body>

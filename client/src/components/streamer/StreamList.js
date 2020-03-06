@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { fetchStreams, deleteStream } from '../../actions';
 
 class StreamList extends React.Component{
-    componentDidMount(){
+    componentDidMount = () =>{
         this.props.fetchStreams();
-        console.log(this.props);
     }
     
     deleteStreamBtn(id){
-        this.props.deleteStream(id);
+        
     }
     
     renderAdmin(stream){
@@ -19,8 +18,8 @@ class StreamList extends React.Component{
             return( 
                 <div className="right floated content"> 
                     <Link to= {`/stream/edit/${stream.id}`} className="ui button primary">Edit</Link>
-                    <button className="ui button negative" onClick={() => this.deleteStreamBtn(stream.id)}> Delete</button>
-                </div>    
+                    <Link to= {`/stream/delete/${stream.id}`} className="ui button negative">Delete</Link>
+                </div>  
             );
         }
     }
@@ -44,7 +43,7 @@ class StreamList extends React.Component{
                     {this.renderAdmin(stream)}
                     <i className="large middle aligned icon camera"/>
                     <div className="content">
-                        {stream.title}
+                        <Link to={`stream/${stream.id}`}>{stream.title}</Link>
                         <div className="description"> 
                             {stream.description}
                         </div>
